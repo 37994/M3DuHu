@@ -1,7 +1,17 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+  }
+
 body{
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    font-family: 'poppins', sans-serif;
+    font-size: 20px;
+    line-height: 1.5;
+    background: #fff;
+    max-width: 1800px;
+    margin: 0 auto;
+    padding-left: 0 15px;
 }
 
 .titel{
@@ -9,3 +19,8 @@ body{
     align-items: center;
 }
 
+header{
+    height: 20x;
+    width: 100%;
+    background:black;
+}
