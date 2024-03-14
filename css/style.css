@@ -17,10 +17,13 @@ body{
 .titel{
     display: flex;
     align-items: center;
+    color: #39b54a;
+    
 }
 
 header{
-    height: 20x;
+    height: 100px;
     width: 100%;
-    background:black;
+    background:#000000;
 }
+
