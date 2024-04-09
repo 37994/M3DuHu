@@ -10,9 +10,9 @@ html {
 
 body{
     font-family: 'poppins', sans-serif;
-    font-size: 20px;
+    font-size: 2rem;
     line-height: 1.5;
-    background: #fff;
+    background: #9BCF53;
     max-width: 100vw;
     /*padding-left: 0 15px;*/
     color: #39b54a;
@@ -23,7 +23,7 @@ body{
 header{
     height: 10rem;
     width: 100%;
-    background:black;
+    background:#416D19;
     display: flex;
     align-items: center;
     gap: 2rem;
@@ -37,111 +37,68 @@ header{
 main {
     display: flex;
     gap: 1rem;
-    padding: 1rem;
+    padding: 1rem; 
     flex-wrap: wrap;
+    flex-grow: 1;
+}
+
+.dozen{
+    background: #BFEA7C;
+    box-shadow: 0 0 5px black; 
+    padding: 5rem;
+    border-radius: 2rem;
+    display: block;
     flex-grow: 1;
 }
 
 .doos1 {
     width: 40rem;
     height: 30rem;
-    padding: 5rem;
-    border-radius: 20px;
-    background-color: aqua;
-    display: block;
-    flex-grow: 1;
+    
 }
 
 .doos2 {
     width: 40rem;
     height: 30rem;
-    padding: 5rem;
-    border-radius: 20px;
-    background-color: red;
-    display: flex;
-    align-items: center;
-    flex-grow: 1;
 }
 
 .doos3 {
     width: 15rem;
     height: 30rem;
-    padding: 5rem;
-    border-radius: 20px;
-    background-color: red;
-    display: flex;
-    align-items: center;
-    flex-grow: 1;
 }
 
 .doos4 {
     width: 45rem;
     height: 30rem;
-    padding: 5rem;
-    border-radius: 20px;
-    background-color: green;
-    display: flex;
-    align-items: center;
-    flex-grow: 1;
 }
 
 .doos5 {
     width: 14.5rem;
     height: 30rem;
-    padding: 5rem;
-    border-radius: 20px;
-    background-color: green;
-    display: flex;
-    align-items: center;
-    flex-grow: 1;
+}
 
+.sunimg {
+    width: 14.5rem;
+    height: 30rem;
 }
 
 .doos6 {
     width: 14.5rem;
     height: 30rem;
-    padding: 5rem;
-    border-radius: 20px;
-    background-color: green;
-    display: flex;
-    align-items: center;
-    flex-grow: 1;
-
 }
 
 .doos7 {
     width: 40rem;
     height: 30rem;
-    padding: 5rem;
-    border-radius: 20px;
-    background-color: green;
-    display: flex;
-    align-items: center;
-    flex-grow: 1;
-
 }
 
 .doos8 {
     width: 15rem;
     height: 30rem;
-    padding: 5rem;
-    border-radius: 20px;
-    background-color: green;
-    display: flex;
-    align-items: center;
-    flex-grow: 1;
-
 }
 
 .doos9 {
     width: 45rem;
     height: 30rem;
-    padding: 5rem;
-    border-radius: 20px;
-    background-color: green;
-    display: flex;
-    align-items: center;
-    flex-grow: 1;
-
 }
 
