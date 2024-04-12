@@ -1,7 +1,7 @@
-let labels = ["A", "B", "C", "D", "E"];
-let data = [100, 80, 40, 65, 30];
+let labels = ["Jan", "Feb", "Mar", "Apr"];
+let data = [17, 14, 15, 12];
 
-const myChart = new Chart(document.getElementById("myChart"), {
+const myChart = new Chart(document.getElementById("js--energieChart"), {
     type: "line",
     data: {
         labels,
@@ -9,12 +9,10 @@ const myChart = new Chart(document.getElementById("myChart"), {
             label: "KwH",
             data,
             backgroundColor: [
-                "rgb(80,80,200)",
-                "rgb(120,120,255)",
-                "rgb(160,160,255)",
-                "rgb(100,100,100)",
-                "rgb(200,200,40)",
-
+                "rgb(34,139,34)",
+                "rgb(34,139,34)",
+                "rgb(34,139,34)",
+                "rgb(34,139,34)",
             ]
         }],
 
