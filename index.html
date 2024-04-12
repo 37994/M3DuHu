@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="/js/script.js" defer></script>
     <title>DuHu</title>
     <meta name="description" content="beroepsopdracht" />
@@ -21,33 +22,35 @@
             <canvas id="myChart"></canvas>
         </div>
         <section class="dozen doos2">
-            <section class="lampen">
-                <img src="/images/lamp-aan.png" alt="">
-                <input type="checkbox" name="" id="" class="slider">
-            </section>
-            <section class="lampen">
-                <img src="/images/lamp-aan.png" alt="">
-                <input type="checkbox" name="" id="" class="slider">
-            </section>
-            <section class="lampen">
-                <img src="/images/lamp-aan.png" alt="">
-                <input type="checkbox" name="" id="" class="slider">
-            </section>
+            <!-- <section class="lampen"> -->
+            <!-- <img src="/images/lamp-aan.png" alt=""> -->
+            <!-- <input type="checkbox" name="" id="" class="slider"> -->
+            <!-- </section> -->
+            <!-- <section class="lampen"> -->
+            <!-- <img src="/images/lamp-aan.png" alt=""> -->
+            <!-- <input type="checkbox" name="" id="" class="slider"> -->
+            <!-- </section> -->
+            <!-- <section class="lampen"> -->
+            <!-- <img src="/images/lamp-aan.png" alt=""> -->
+            <!-- <input type="checkbox" name="" id="" class="slider"> -->
+            <!-- </section> -->
         </section>
         <section class="dozen doos3">
-            <img src="images/lamp-aan.png" alt="lamp staat aan">
+            <img id="js--doos3Img" src="images/lamp-uit.png" alt="lamp staat aan">
             <div class="dropdown">
-                <span id="spanVanDoos3">filler</span>
+                <span id="spanVanDoos3">11:00</span>
                 <div class="dropdown-content">
-                    <button type="button" id="js--tijdButton1">12:00</button>
-                    <button type="button" id="js--tijdButton2">13:00</button>
-                    <button type="button" id="js--tijdButton3">14:00</button>
-                    <button type="button" id="js--tijdButton4">15:00</button>
-                    <button type="button" id="js--tijdButton5">16:00</button>
-                    <button type="button" id="js--tijdButton6">17:00</button>
+                    <button type="button" id="js--tijdButton1" class="doos3buttons">12:00</button>
+                    <button type="button" id="js--tijdButton2" class="doos3buttons">13:00</button>
+                    <button type="button" id="js--tijdButton3" class="doos3buttons">14:00</button>
+                    <button type="button" id="js--tijdButton4" class="doos3buttons">15:00</button>
+                    <button type="button" id="js--tijdButton5" class="doos3buttons">16:00</button>
+                    <button type="button" id="js--tijdButton6" class="doos3buttons">17:00</button>
                 </div>
             </div>
-            <input type="checkbox" id="js--doos3Button" class="slider">
+            <div style="position: relative;">
+                <input type="checkbox" name="" id="js--doos3Checkbox" class="slider">
+            </div>
         </section>
         <section class="dozen doos4"></section>
         <section class="dozen doos5"> <img src="/images/sun.png" alt=""></section>
