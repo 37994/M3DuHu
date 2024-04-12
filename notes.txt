@@ -1,0 +1,1 @@
+link naar de weer api: https://weerlive.nl/api/weerlive_api_v2.php?key=demo&locatie=Amsterdam
