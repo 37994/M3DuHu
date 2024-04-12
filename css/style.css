@@ -197,6 +197,36 @@ main {
 .doos8 {
     grid-row: 10 / 20;
     grid-column: 12 / 14;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.zonOpkomst {
+    width: 8rem;
+    height: 10rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.zonOpkomst > img {
+    width: 7rem;
+}
+
+.zonOndergang {
+    width: 8rem;
+    height: 10rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.zonOndergang > img {
+    width: 7rem;
 }
 
 .doos9 {

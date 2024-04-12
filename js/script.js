@@ -82,3 +82,17 @@ let toggle = document.getElementById("js--doos3Checkbox").addEventListener('chan
         lampUit()
     }
 });
+
+const zonOpkomst = document.getElementById("js--opkomst");
+const zonOndergang = document.getElementById("js--ondergang");
+
+function liveZonData(){
+    fetch("https://weerlive.nl/api/weerlive_api_v2.php?key=demo&locatie=Amsterdam")
+        .then(res => res.json())
+        .then(function(realData){
+            zonOpkomst.innerText = realData.liveweer[0].sup;
+            zonOndergang.innerText = realData.liveweer[0].sunder;
+        })
+};
+
+liveZonData();
