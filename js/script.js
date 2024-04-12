@@ -1,3 +1,11 @@
+const datum = document.getElementById("js--tijd");
+
+let tijd = new Date();
+
+const format = input => ('0' + input).slice(-2);
+const getDate = () => `${format(tijd.getDay())}-${format(tijd.getMonth())}-${tijd.getFullYear()}`;
+datum.innerText = getDate();
+
 let labels = ["Jan", "Feb", "Mar", "Apr"];
 let data = [17, 14, 15, 12];
 

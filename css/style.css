@@ -1,16 +1,16 @@
-html {
-    font-size: 62.5%
-}
-
 * {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
 }
 
+html {
+    font-size: 62.5%
+}
+
 body{
     height: 100vh;
-    font-family: 'poppins', sans-serif;
+    font-family: 'poppins', system-ui, sans-serif;
     font-size: 2rem;
     line-height: 1.5;
     background: #9BCF53;
@@ -29,6 +29,12 @@ header{
     align-items: center;
     gap: 2rem;
     color: white;
+}
+
+#js--tijd {
+    margin-left: auto;
+    margin-right: 2rem;
+    font-family: monospace;
 }
 
 .logo{
