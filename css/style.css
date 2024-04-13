@@ -54,7 +54,7 @@ main {
 
 .dozen{
     background: rgb(239, 255, 224);
-    box-shadow: 0 0 5px black; 
+    box-shadow: 0 2rem 1rem 0 rgba(0, 0, 0, 0.2);
     padding: 1rem;
     border-radius: 2rem;
     display: block;
@@ -77,15 +77,27 @@ main {
     display: flex;
     justify-content: center;
     align-items: center;
+
     
 }
 
-.doos2 > section{
-    width: fit-content;
+.lampen1{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
-.lampen {
-    width: 10rem;
+#js--imgdoos2{
+    height: 20rem;
+}
+
+#js--imgdoos22{
+    height: 20rem;
+}
+
+#js--imgdoos23{
+    height: 20rem;
 }
 
 .doos3 {
@@ -173,15 +185,12 @@ main {
     grid-column: 1 / 4;
     display: flex;
     justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 
-.doos5 > img {
-    width: 1rem;
-    height: 1rem;
-    grid-column: 2 / 3;
-    grid-row: 11 / 13;
-    flex-grow: 1;
-   
+#imgZonnen{
+    height: 15rem;
 }
 
 .sunimg {

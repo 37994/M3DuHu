@@ -1,3 +1,4 @@
+//tijd
 const datum = document.getElementById("js--tijd");
 
 let tijd = new Date();
@@ -5,6 +6,8 @@ let tijd = new Date();
 const format = input => ('0' + input).slice(-2);
 const getDate = () => `${format(tijd.getDay())}-${format(tijd.getMonth())}-${tijd.getFullYear()}`;
 datum.innerText = getDate();
+
+//chart
 
 let labels = ["Jan", "Feb", "Mar", "Apr"];
 let data = [17, 14, 15, 12];
@@ -34,6 +37,12 @@ const myChart = new Chart(document.getElementById("js--energieChart"), {
         }
     }
 });
+
+//chart zonnen
+
+
+
+//lampen
 
 const spanVanDoos3 = document.getElementById("spanVanDoos3");
 const doos3Button1 = document.getElementById("js--tijdButton1");
@@ -101,4 +110,33 @@ function liveZonData(){
         })
 };
 
+//lamp1
+const doos2Checkbox = document.getElementById("js--doos2slider");
+const doos2img = document.getElementById("js--imgdoos2");
+let lampisaan = false;
+
+function lampIsAan() {
+    doos2img.src = "images/lamp-aan.png"
+};
+
+function lampIsUit() {
+    doos2img.src = "images/lamp-uit.png"
+};
+
+let toggles = document.getElementById("js--doos2slider").addEventListener('change', () => {
+    if (lampisaan = !lampisaan) {
+        lampIsAan()
+    } else {
+        lampIsUit()
+    }
+});
+
+
+
+
+
 liveZonData();
+
+
+//doos 7 
+
