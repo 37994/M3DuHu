@@ -173,6 +173,47 @@ let toggles = document.getElementById("js--doos2slider").addEventListener('chang
     }
 });
 
+//lamp2
+const doos2Checkbox2 = document.getElementById("js--doos2slider2");
+const doos2img2 = document.getElementById("js--imgdoos22");
+let lampisaan2 = false;
+
+function lampIsAan2() {
+    doos2img2.src = "images/lamp-aan.png"
+};
+
+function lampIsUit2() {
+    doos2img2.src = "images/lamp-uit.png"
+};
+
+let toggles2 = document.getElementById("js--doos2slider2").addEventListener('change', () => {
+    if (lampisaan2 = !lampisaan2) {
+        lampIsAan2()
+    } else {
+        lampIsUit2()
+    }
+});
+
+//lamp3
+const doos2Checkbox3 = document.getElementById("js--doos2slider3");
+const doos2img3 = document.getElementById("js--imgdoos23");
+let lampisaan3 = false;
+
+function lampIsAan3() {
+    doos2img3.src = "images/lamp-aan.png"
+};
+
+function lampIsUit3() {
+    doos2img3.src = "images/lamp-uit.png"
+};
+
+let toggles3 = document.getElementById("js--doos2slider3").addEventListener('change', () => {
+    if (lampisaan3 = !lampisaan3) {
+        lampIsAan3()
+    } else {
+        lampIsUit3()
+    }
+});
 
 
 
