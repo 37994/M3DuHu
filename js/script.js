@@ -1,3 +1,4 @@
+//tijd
 const datum = document.getElementById("js--tijd");
 
 let tijd = new Date();
@@ -8,35 +9,87 @@ const getDate = () => `${format(tijd.getDay())}-${format(tijd.getMonth())}-${tij
 datum.innerText = getDate();
 
 
+//chart
 let labels = ["Jan", "Feb", "Mar", "Apr"];
 let data = [getRandom(20, 8), getRandom(20, 8), getRandom(20, 8), getRandom(20, 8), 5, 30];
 
-const myChart = new Chart(document.getElementById("js--energieChart"), {
+const linechart = document.getElementById("js--energieChart");
+const donutchart = document.getElementById("js--zonnenChart")
 
-    type: "line",
-    data: {
-        labels,
+let data, config;
+
+data = {
+
+    linechart:data = {
+        labels: ["Jan", "Feb", "Mrt", "Apr"],
         datasets: [{
             label: "KwH",
-            data,
+            data: [17, 14, 15, 12],
             backgroundColor: [
-                "rgb(34,139,34)",
-                "rgb(34,139,34)",
-                "rgb(34,139,34)",
-                "rgb(34,139,34)",
+                "rgb(255, 187, 92)",
+                "rgb(255, 155, 80)",
+                "rgb(226, 94, 62)",
+                "rgb(198, 61, 47)",
+    
             ]
         }],
 
     },
-    options: {
-        maintainAspectRatio: false,
-        plugins: {
-            legend: {
-                display: false
+
+    donutchart:data = {
+        labels: ["Jan", "Feb", "Mrt", "Apr", "mei", "jun", "jul", "aug", "sep", "sep", "okt", "nov", "dec"],
+        datasets: [{
+            label: "%",
+            data: [3, 5, 8, 12, 13, 13, 13,11, 11 ,10, 7, 3, 2],
+            backgroundColor: [
+                "rgb(255, 187, 92)",
+                "rgb(255, 155, 80)",
+                "rgb(226, 94, 62)",
+                "rgb(198, 61, 47)",
+    
+            ]
+        }],
+    }
+    
+}
+
+config = {
+    linechart: {
+        type: "line",
+        data: data.linechart,
+        options: {
+            maintainAspectRatio: false,
+            plugins: {
+                legend: {
+                    display: false
+                }
+            }
+        }
+    },
+
+    donutchart: {
+        type: "bar",
+        data: data.donutchart,
+        options: {
+            maintainAspectRatio: false,
+            plugins: {
+                legend: {
+                    display: false
+                }
             }
         }
     }
-});
+}
+
+
+myChart = new Chart(linechart, config.linechart);
+myChart = new Chart(donutchart, config.donutchart)
+
+//chart zonnen
+
+
+
+//lampen
 
 const spanVanDoos3 = document.getElementById("spanVanDoos3");
 const doos3Button1 = document.getElementById("js--tijdButton1");
@@ -104,4 +157,96 @@ function liveZonData(){
         })
 };
 
+//lamp1
+const doos2Checkbox = document.getElementById("js--doos2slider");
+const doos2img = document.getElementById("js--imgdoos2");
+let lampisaan = false;
+
+function lampIsAan() {
+    doos2img.src = "images/lamp-aan.png"
+};
+
+function lampIsUit() {
+    doos2img.src = "images/lamp-uit.png"
+};
+
+let toggles = document.getElementById("js--doos2slider").addEventListener('change', () => {
+    if (lampisaan = !lampisaan) {
+        lampIsAan()
+    } else {
+        lampIsUit()
+    }
+});
+
+//lamp2
+const doos2Checkbox2 = document.getElementById("js--doos2slider2");
+const doos2img2 = document.getElementById("js--imgdoos22");
+let lampisaan2 = false;
+
+function lampIsAan2() {
+    doos2img2.src = "images/lamp-aan.png"
+};
+
+function lampIsUit2() {
+    doos2img2.src = "images/lamp-uit.png"
+};
+
+let toggles2 = document.getElementById("js--doos2slider2").addEventListener('change', () => {
+    if (lampisaan2 = !lampisaan2) {
+        lampIsAan2()
+    } else {
+        lampIsUit2()
+    }
+});
+
+//lamp3
+const doos2Checkbox3 = document.getElementById("js--doos2slider3");
+const doos2img3 = document.getElementById("js--imgdoos23");
+let lampisaan3 = false;
+
+function lampIsAan3() {
+    doos2img3.src = "images/lamp-aan.png"
+};
+
+function lampIsUit3() {
+    doos2img3.src = "images/lamp-uit.png"
+};
+
+let toggles3 = document.getElementById("js--doos2slider3").addEventListener('change', () => {
+    if (lampisaan3 = !lampisaan3) {
+        lampIsAan3()
+    } else {
+        lampIsUit3()
+    }
+});
+
+
+
+
 liveZonData();
+
+
+//doos 7
+
+
+//dropdown
+/* When the user clicks on the button,
+toggle between hiding and showing the dropdown content */
+function myFunction() {
+    document.getElementById("myDropdown").classList.toggle("show");
+  }
+  
+  // Close the dropdown menu if the user clicks outside of it
+  window.onclick = function(event) {
+    if (!event.target.matches('.dropbtn')) {
+      var dropdowns = document.getElementsByClassName("dropdown-content");
+      var i;
+      for (i = 0; i < dropdowns.length; i++) {
+        var openDropdown = dropdowns[i];
+        if (openDropdown.classList.contains('show')) {
+          openDropdown.classList.remove('show');
+        }
+      }
+    }
+  }
+
