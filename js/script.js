@@ -9,9 +9,10 @@ datum.innerText = getDate();
 
 
 let labels = ["Jan", "Feb", "Mar", "Apr"];
-let data = [getRandom(20, 8), getRandom(20, 8), getRandom(20, 8), getRandom(20, 8)];
+let data = [getRandom(20, 8), getRandom(20, 8), getRandom(20, 8), getRandom(20, 8), 5, 30];
 
 const myChart = new Chart(document.getElementById("js--energieChart"), {
+
     type: "line",
     data: {
         labels,
