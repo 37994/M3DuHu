@@ -10,13 +10,9 @@ datum.innerText = getDate();
 
 
 //chart
-let labels = ["Jan", "Feb", "Mar", "Apr"];
-let data = [getRandom(20, 8), getRandom(20, 8), getRandom(20, 8), getRandom(20, 8), 5, 30];
 
 const linechart = document.getElementById("js--energieChart");
 const donutchart = document.getElementById("js--zonnenChart")
-
-let data, config;
 
 data = {
 
@@ -24,7 +20,7 @@ data = {
         labels: ["Jan", "Feb", "Mrt", "Apr"],
         datasets: [{
             label: "KwH",
-            data: [17, 14, 15, 12],
+            data: [17, 14, 15, 12, 20, 10],
             backgroundColor: [
                 "rgb(255, 187, 92)",
                 "rgb(255, 155, 80)",
