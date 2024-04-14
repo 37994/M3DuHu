@@ -1,5 +1,5 @@
 const lineChart = document.getElementById("myChart");
-const doughnutChart = document.getElementById("myChart2");
+const barChart = document.getElementById("js--zonnenChart");
 
 let data, config;
 
@@ -20,7 +20,7 @@ data = {
             borderColor: "red"
         }]
     },
-    doughnutChart: {
+    barChart: {
         labels: ["A", "B", "C", "D", "E"],
         datasets: [{
             label: "KwH",
@@ -40,8 +40,6 @@ data = {
 
 config = {
     lineChart: {
-    //type: "bar",
-    //type: "doughnut",
         type: "line",
         data: data.lineChart,
         options: {
@@ -53,11 +51,9 @@ config = {
             }
         }
     },
-    doughnutChart: {
-    //type: "bar",
-    //type: "doughnut",
-        type: "doughnut",
-        data: data.doughnutChart,
+    barChart: {
+        type: "bar",
+        data: data.barChart,
         options: {
             maintainAspectRatio: false,
             plugins: {
@@ -73,4 +69,4 @@ config = {
 
 
 myChart = new Chart(lineChart, config.lineChart);
-myChart2 = new Chart(doughnutChart, config.doughnutChart);
+myChart2 = new Chart(barChart, config.barChartChart);

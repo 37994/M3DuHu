@@ -9,34 +9,76 @@ datum.innerText = getDate();
 
 //chart
 
-let labels = ["Jan", "Feb", "Mar", "Apr"];
-let data = [17, 14, 15, 12];
+const linechart = document.getElementById("js--energieChart");
+const donutchart = document.getElementById("js--zonnenChart")
 
-const myChart = new Chart(document.getElementById("js--energieChart"), {
-    type: "line",
-    data: {
-        labels,
+let data, config;
+
+data = {
+    linechart:data = {
+        labels: ["Jan", "Feb", "Mrt", "Apr"],
         datasets: [{
             label: "KwH",
-            data,
+            data: [17, 14, 15, 12],
             backgroundColor: [
-                "rgb(34,139,34)",
-                "rgb(34,139,34)",
-                "rgb(34,139,34)",
-                "rgb(34,139,34)",
+                "rgb(255, 187, 92)",
+                "rgb(255, 155, 80)",
+                "rgb(226, 94, 62)",
+                "rgb(198, 61, 47)",
+    
             ]
         }],
 
     },
-    options: {
-        maintainAspectRatio: false,
-        plugins: {
-            legend: {
-                display: false
+
+    donutchart:data = {
+        labels: ["Jan", "Feb", "Mrt", "Apr", "mei", "jun", "jul", "aug", "sep", "sep", "okt", "nov", "dec"],
+        datasets: [{
+            label: "%",
+            data: [3, 5, 8, 12, 13, 13, 13,11, 11 ,10, 7, 3, 2],
+            backgroundColor: [
+                "rgb(255, 187, 92)",
+                "rgb(255, 155, 80)",
+                "rgb(226, 94, 62)",
+                "rgb(198, 61, 47)",
+    
+            ]
+        }],
+    }
+    
+}
+
+config = {
+    linechart: {
+        type: "line",
+        data: data.linechart,
+        options: {
+            maintainAspectRatio: false,
+            plugins: {
+                legend: {
+                    display: false
+                }
+            }
+        }
+    },
+
+    donutchart: {
+        type: "bar",
+        data: data.donutchart,
+        options: {
+            maintainAspectRatio: false,
+            plugins: {
+                legend: {
+                    display: false
+                }
             }
         }
     }
-});
+}
+
+
+myChart = new Chart(linechart, config.linechart);
+myChart = new Chart(donutchart, config.donutchart)
 
 //chart zonnen
 
@@ -138,5 +180,27 @@ let toggles = document.getElementById("js--doos2slider").addEventListener('chang
 liveZonData();
 
 
-//doos 7 
+//doos 7
+
+
+//dropdown
+/* When the user clicks on the button,
+toggle between hiding and showing the dropdown content */
+function myFunction() {
+    document.getElementById("myDropdown").classList.toggle("show");
+  }
+  
+  // Close the dropdown menu if the user clicks outside of it
+  window.onclick = function(event) {
+    if (!event.target.matches('.dropbtn')) {
+      var dropdowns = document.getElementsByClassName("dropdown-content");
+      var i;
+      for (i = 0; i < dropdowns.length; i++) {
+        var openDropdown = dropdowns[i];
+        if (openDropdown.classList.contains('show')) {
+          openDropdown.classList.remove('show');
+        }
+      }
+    }
+  }
 

@@ -7,7 +7,10 @@
     <link rel="stylesheet" href="css/style.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="/js/script.js" defer></script>
-    <title>DuHu</title>
+    <link
+        	href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,500;1,400&family=Poppins:wght@300;400;600;700&display=swap"
+        rel="stylesheet">
+    <title>dashboard</title>
     <meta name="description" content="beroepsopdracht" />
 
 </head>
@@ -15,7 +18,22 @@
 <body>
     <header>
         <img class="logo" src="images/Logo.png" width="2rem" alt="Logo">
-        <h1 class="titel">Eco6</h1>
+        <h1 class="titel">ecozes</h1>
+        <div class="dropdown">
+            <button onclick="myFunction()" class="dropbtn">menu</button>
+            <div id="myDropdown" class="dropdown-content">
+              <a href="#">buitentemperatuur </a>
+              <a href="#">Opbrengst van zonnepanelen </a>
+              <a href="#">lamp aan/uitzetten </a>
+              <a href="#">Zonsopkomst en zonsondergang  </a>
+              <a href="#">Energieverbruik </a>
+              <a href="#">tijd lamp uit/aanzetten </a>
+              <a href="#">weersverwachting </a>
+              <a href="#">Binnen en buitentemperatuur </a>
+              <a href="#">temperatuur meten </a>
+
+            </div>
+          </div>
         <p id="js--tijd"></p>
     </header>
     <main>
@@ -64,7 +82,7 @@
         </section>
         <section class="dozen doos6"></section>
         <section class="dozen doos7">
-            <canvas id="js--zonnenChart"></canvas>
+            <canvas id="js--zonnenChart" class="energieChart"></canvas>
         </section>
         <section class="dozen doos8">
             <div class="zonOpkomst">
