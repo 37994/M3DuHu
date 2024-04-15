@@ -34,6 +34,7 @@ data = {
     donutchart:data = {
         labels: ["Jan", "Feb", "Mrt", "Apr", "mei", "jun", "jul", "aug", "sep", "sep", "okt", "nov", "dec"],
         datasets: [{
+            labels: "sun",
             label: "%",
             data: [3, 5, 8, 12, 13, 13, 13,11, 11 ,10, 7, 3, 2],
             backgroundColor: [
@@ -55,6 +56,10 @@ config = {
         options: {
             maintainAspectRatio: false,
             plugins: {
+                title: {
+                    display: true,
+                    text: 'Energieverbruik'
+                },
                 legend: {
                     display: false
                 }
@@ -68,6 +73,9 @@ config = {
         options: {
             maintainAspectRatio: false,
             plugins: {
+                title: {
+                    display: true,
+                    text: 'Opbrengst van zonnepanelen' },
                 legend: {
                     display: false
                 }
@@ -142,6 +150,7 @@ let toggle = document.getElementById("js--doos3Checkbox").addEventListener('chan
 
 const zonOpkomst = document.getElementById("js--opkomst");
 const zonOndergang = document.getElementById("js--ondergang");
+const graden = document.getElementById("js--graden");
 
 function liveZonData(){
     fetch("https://weerlive.nl/api/weerlive_api_v2.php?key=demo&locatie=Amsterdam")
@@ -149,7 +158,9 @@ function liveZonData(){
         .then(function(realData){
             zonOpkomst.innerText = realData.liveweer[0].sup;
             zonOndergang.innerText = realData.liveweer[0].sunder;
+            graden.innerText = realData.liveweer[0].temp;
         })
+
 };
 
 //lamp1
