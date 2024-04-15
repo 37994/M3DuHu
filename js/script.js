@@ -1,13 +1,5 @@
 //tijd
-const datum = document.getElementById("js--tijd");
-
-let tijd = new Date();
-
-const getRandom = (min, max) => Math.floor(Math.random() * (max - min) + min);
-const format = input => ('0' + input).slice(-2);
-const getDate = () => `${format(tijd.getDay())}-${format(tijd.getMonth())}-${tijd.getFullYear()}`;
-datum.innerText = getDate();
-
+document.getElementById("js--tijd").innerText = new Date().toDateString();
 
 //chart
 
