@@ -112,31 +112,10 @@ doos3Button6.onclick = function() {
     spanVanDoos3.innerText = "17:00";
 };
 
-
-const doos3Checkbox = document.getElementById("js--doos3Checkbox");
-const doos3Img = document.getElementById("js--doos3Img");
-let isLampAan = false;
-
-function lampAan() {
-    doos3Img.src = "images/lamp-aan.png"
-};
-
-function lampUit() {
-    doos3Img.src = "images/lamp-uit.png"
-};
-
-let toggle = document.getElementById("js--doos3Checkbox").addEventListener('change', ()=> {
-    if (isLampAan = !isLampAan) {
-        lampAan()
-    } else {
-        lampUit()
-    }
-});
-
 const zonOpkomst = document.getElementById("js--opkomst");
 const zonOndergang = document.getElementById("js--ondergang");
 
-function liveZonData(){
+function liveData(){
     fetch("https://weerlive.nl/api/weerlive_api_v2.php?key=demo&locatie=Amsterdam")
         .then(res => res.json())
         .then(function(realData){
@@ -145,124 +124,45 @@ function liveZonData(){
         })
 };
 
-//lamp1
-const doos2Checkbox = document.getElementById("js--doos2slider");
-const doos2img = document.getElementById("js--imgdoos2");
-let lampisaan = false;
+liveData();
 
-function lampIsAan() {
-    doos2img.src = "images/lamp-aan.png"
-};
-
-function lampIsUit() {
-    doos2img.src = "images/lamp-uit.png"
-};
-
-let toggles = document.getElementById("js--doos2slider").addEventListener('change', () => {
-    if (lampisaan = !lampisaan) {
-        lampIsAan()
-    } else {
-        lampIsUit()
-    }
-});
-
-//lamp2
-const doos2Checkbox2 = document.getElementById("js--doos2slider2");
-const doos2img2 = document.getElementById("js--imgdoos22");
-let lampisaan2 = true;
-
-function lampIsAan2() {
-    doos2img2.src = "images/lamp-aan.png"
-};
-
-function lampIsUit2() {
-    doos2img2.src = "images/lamp-uit.png"
-};
-
-let toggles2 = document.getElementById("js--doos2slider2").addEventListener('change', () => {
-    if (lampisaan2 = !lampisaan2) {
-        lampIsAan2()
-    } else {
-        lampIsUit2()
-    }
-});
-
-//lamp3
-const doos2Checkbox3 = document.getElementById("js--doos2slider3");
-const doos2img3 = document.getElementById("js--imgdoos23");
-let lampisaan3 = false;
-
-function lampIsAan3() {
-    doos2img3.src = "images/lamp-aan.png"
-};
-
-function lampIsUit3() {
-    doos2img3.src = "images/lamp-uit.png"
-};
-
-let toggles3 = document.getElementById("js--doos2slider3").addEventListener('change', () => {
-    if (lampisaan3 = !lampisaan3) {
-        lampIsAan3()
-    } else {
-        lampIsUit3()
-    }
-});
-
-//arduino
-
-const lightEmels = document.getElementsByClassName("light");
-let lights = [false, true, false];
-
-readData("lights.php");
-
-for(let i = 0; i < lights.length; i++) {
-    lightEmels[i].addEventListener('click', ()=>{
-        lights[i] = !lights[i];
-        sendData('lights.php', lights);
-    });
-}
-
-function readData(url) {
-    fetch(url)
-    .then(async (response) => {
-        let json = await response.json();
-        UpdateLightsFromServer(json);
-    })
-}
-
-function sendData(url, data) {
-    fetch(url, {
+// Arduino
+async function sendData(url, data) {
+    const response = await fetch(url, data ? {
         method: 'POST',
         headers: {
             'Accept': 'application/json',
             'Content-Type': 'application/json'
         },
         body: JSON.stringify(data)
-    }).then(async (response) => {
-        let json = await response.json();
-        UpdateLightsFromServer(json);
-    })
+    } : null);
+    return await response.json();
 }
 
-function UpdateLightsFromServer(json) {
-    lights = json;
-    //console.log(lights);
-    UpdateLightElems(lights);
-}
+// lights
+(async function() {
+    let lights = await sendData("lights.php");
+    const lampen = document.getElementsByClassName('lampen1');
 
-function UpdateLightElems(data) {
-    for(let i = 0;i < data.length; i++) {
-        if(data[i]) lightEmels[i].style.backgroundColor = 'green';
-        else lightEmels[i].style.backgroundColor = 'red';
+    for (let i = 0; i < lampen.length; i++) {
+        const img = lampen[i].querySelector('img');
+        const slider = lampen[i].querySelector('.slider');
+
+        // hoofdpijn :(
+        img.src = lights[i] ? "images/lamp-aan.png" : "images/lamp-uit.png";
+        slider.checked = lights[i];
+
+        slider.addEventListener('change', async () => {
+            lights[i] = slider.checked;
+            img.src = lights[i] ? "images/lamp-aan.png" : "images/lamp-uit.png";
+
+            lights = await sendData('lights.php', lights);
+            slider.checked = lights[i];
+        });
     }
-}
-
-
-liveZonData();
-
+})();
 
 //doos 7
-
 
 //dropdown
 /* When the user clicks on the button,

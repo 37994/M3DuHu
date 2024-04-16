@@ -11,8 +11,7 @@ for(let i = 0; i < lights.length; i++) {
 }
 
 function readData(url) {
-    fetch(url)
-    .then(async (response) => {
+    fetch(url).then(async (response) => {
         let json = await response.json();
         UpdateLightsFromServer(json);
     })
