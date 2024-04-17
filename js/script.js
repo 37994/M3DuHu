@@ -1,25 +1,18 @@
 //tijd
-const datum = document.getElementById("js--tijd");
-
-let tijd = new Date();
-
-const format = input => ('0' + input).slice(-2);
-const getDate = () => `${format(tijd.getDay())}-${format(tijd.getMonth())}-${tijd.getFullYear()}`;
-datum.innerText = getDate();
+document.getElementById("js--tijd").innerText = new Date().toDateString();
 
 //chart
 
 const linechart = document.getElementById("js--energieChart");
 const donutchart = document.getElementById("js--zonnenChart")
 
-let data, config;
-
 data = {
+
     linechart:data = {
         labels: ["Jan", "Feb", "Mrt", "Apr"],
         datasets: [{
             label: "KwH",
-            data: [17, 14, 15, 12],
+            data: [17, 14, 15, 12, 20, 10],
             backgroundColor: [
                 "rgb(255, 187, 92)",
                 "rgb(255, 155, 80)",

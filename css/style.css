@@ -48,6 +48,7 @@ header{
 .logo{
     height: 10vh;
     width: 5vw;
+    padding: 0.3rem;
 }
 
 main {
