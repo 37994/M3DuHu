@@ -1,0 +1,19 @@
+body{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    background-color: bisque;
+}
+
+.light {
+    background-color: blue;
+    margin: 10%;
+    width: 80%;
+    height: 80%;
+    border-radius: 10px;
+}
