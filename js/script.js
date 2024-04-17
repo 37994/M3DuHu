@@ -230,7 +230,7 @@ async function sendData(url, data) {
             slider.checked = lights[i];
         });
     }
-});
+})();
 
 //doos 7
 
