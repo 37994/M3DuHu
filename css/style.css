@@ -181,9 +181,20 @@ main {
     }
 }
 
+/*chartJS binnen & buiten grafiek*/
 .doos4 {
     grid-row: 1 / 8;
     grid-column: 14 / 20;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.doos4 > canvas{
+    background-color: cyan;
+    width: 30rem;
+    height: 20rem;
+    padding: none;
 }
 
 .doos5 {
@@ -207,6 +218,19 @@ main {
 .doos6 {
     grid-row: 10 / 20;
     grid-column: 4 / 7;
+}
+
+.doos6-wrapper{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.thermometerImg{
+    width: 100%;
 }
 
 .doos7 {
