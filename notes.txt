@@ -1,1 +1,2 @@
 link naar de weer api: https://weerlive.nl/api/weerlive_api_v2.php?key=demo&locatie=Amsterdam
+link naar ma-cloud: https://37994.hosts2.ma-cloud.nl/M3DuHu/
