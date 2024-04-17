@@ -4,7 +4,9 @@ document.getElementById("js--tijd").innerText = new Date().toDateString();
 //chart
 
 const linechart = document.getElementById("js--energieChart");
-const donutchart = document.getElementById("js--zonnenChart")
+const donutchart = document.getElementById("js--zonnenChart");
+const binnenBuitenChart = document.getElementById("binnenBuitenChart--js");
+
 
 data = {
 
@@ -37,6 +39,31 @@ data = {
                 "rgb(198, 61, 47)",
     
             ]
+        }],
+    },
+
+    binnenBuitenChart:data = {
+        labels: ["1","2","3","4","5","6","7","8","9","10","11","12"],
+        datasets: [{
+            label: "Buitentemperatuur",
+            data: [7, 8, 7, 6, 7, 9, 10, 11, 14, 14, 13, 14],
+            backgroundColor: [
+                "rgb(30,144,255)"
+            ],
+            tension: 0.5,
+            borderColor:[
+                "rgb(25,25,112)"
+            ],
+        },{
+            label: "Binnentemperatuur",
+            data: [20, 20, 21, 19, 18, 20, 18, 19, 21, 20, 20, 19],
+            backgroundColor: [
+                "rgb(139,0,0)",
+            ],
+            tension: 0.5,
+            borderColor:[
+                "rgb(220,20,60)"
+            ],
         }],
     }
     
@@ -74,12 +101,44 @@ config = {
                 }
             }
         }
+    },
+
+    binnenBuitenChart: {
+        type: "line",
+        data: data.binnenBuitenChart,
+        options: {
+            scales: {
+                y: {
+                    title:{
+                        display: true,
+                        text: 'Temperatuur in C'
+                    }
+                },
+                x:  {
+                    title:{
+                        display: true,
+                        text: 'Uurtijd'
+                    }
+                }
+            },
+            maintainAspectRatio: false,
+            plugins: {
+                title: {
+                    display: true,
+                    text: 'Binen & Buiten Temperatuur'
+                },
+                legend: {
+                    display: false
+                }
+            }
+        }
     }
 }
 
 
 myChart = new Chart(linechart, config.linechart);
 myChart = new Chart(donutchart, config.donutchart)
+myChart = new Chart(binnenBuitenChart, config.binnenBuitenChart)
 
 //chart zonnen
 
@@ -171,7 +230,7 @@ async function sendData(url, data) {
             slider.checked = lights[i];
         });
     }
-})();
+});
 
 //doos 7
 

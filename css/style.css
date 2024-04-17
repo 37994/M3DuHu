@@ -191,10 +191,8 @@ main {
 }
 
 .doos4 > canvas{
-    background-color: cyan;
-    width: 30rem;
-    height: 20rem;
-    padding: none;
+    width: 95%;
+    height: 95%;
 }
 
 .doos5 {
@@ -221,16 +219,50 @@ main {
 }
 
 .doos6-wrapper{
-    height: 100%;
+    height: 80%;
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
+    flex-wrap: nowrap;
+    padding-top: 5rem;
 }
 
 .thermometerImg{
-    width: 100%;
+    width: 12rem;
+}
+
+.temperatuur{
+    display: absolute;
+}
+
+.btnWrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.temperatuurBtn{
+    padding: 1rem;
+    border-radius: 1.6rem;
+    min-width: 13rem;
+    background-color: #d4e09b;
+    font-size: 1.6rem;
+    font-family: 'poppins', system-ui, sans-serif;
+    color: #a98467;
+    font-weight: 600;
+    transition: ease-in-out 0.3s;
+    border: none;
+}
+
+.temperatuurBtn:hover{
+    background-color: black;
+    color: white;
+    cursor: pointer;
+}
+
+.celcius{
+    font-size: 2rem;
 }
 
 .doos7 {
