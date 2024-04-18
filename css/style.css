@@ -342,7 +342,7 @@ main {
 }
 .overigeDagen{
     padding: 1rem;
-    background: white;
+    background: #ffffff99;
     border: none;
     border-radius: 1rem;
 }
@@ -358,6 +358,12 @@ main {
     justify-content: space-between;
     align-items: center;
     text-align: center;
+}
+
+.nacht{
+    background-color: #00000020;
+    padding: 0.5rem 0.7rem;
+    border-radius: 0.4rem;
 }
 /**/
 
@@ -416,3 +422,18 @@ footer{
   
   /* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
   .show {display:block;}
+
+
+  @media screen and (max-width: 87.5rem){
+    body{
+        background-color: white;
+    }
+
+  }
+
+
+  @media screen and (max-width: 62.5rem){
+    body{
+        background-color: black;
+    }
+  }
