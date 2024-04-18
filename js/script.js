@@ -1,11 +1,18 @@
 //tijd
 
-const nu = new Date();
-const dagen = ["Zondag", "Maandag", "Dinsdag", "Woensdag", "Donderdag", "Vrijdag", "Zaterdag"];
+let nu = new Date();
+const dagen = ["Zo", "Ma", "Di", "Wo", "Donderdag", "Vr", "Za"];
 const dagVdWeek = dagen[nu.getDay()];
+const morgen = dagen[nu.getDay()+1];
+const overmorgen = dagen[nu.getDay()+2];
+const gisteren = dagen[nu.getDay()-1];
 
 document.getElementById("js--tijd").innerText = new Date().toDateString();
 document.getElementById("vandaag--js").innerText = dagVdWeek;
+document.getElementById("morgen--js").innerText = morgen;
+document.getElementById("overmorgen--js").innerText = overmorgen;
+document.getElementById("gisteren--js").innerText = gisteren;
+
 
 
 
@@ -194,6 +201,15 @@ const zonOndergang = document.getElementById("js--ondergang");
 const graden = document.getElementById("js--graden");
 const lowTemp = document.getElementById("lowTemp--js");
 const maxTemp = document.getElementById("maxTemp--js");
+const morgenMaxtemp = document.getElementById("morgenDag--js");
+const morgenLowtemp = document.getElementById("morgenNacht--js");
+const overmorgenMax = document.getElementById("overmorgenDag--js");
+const overmorgenLow = document.getElementById("overmorgenNacht--js");
+const natweeDagenmin = document.getElementById("natweeDagenmin--js");
+const natweeDagenmax = document.getElementById("natweeDagenmax--js");
+const nadrieDagenmin = document.getElementById("nadrieDagenmin--js");
+const nadrieDagenmax = document.getElementById("nadrieDagenmax--js");
+    
 
 function liveData(){
     fetch("https://weerlive.nl/api/weerlive_api_v2.php?key=demo&locatie=Amsterdam")
@@ -202,8 +218,16 @@ function liveData(){
             zonOpkomst.innerText = realData.liveweer[0].sup;
             zonOndergang.innerText = realData.liveweer[0].sunder;
             graden.innerText = realData.liveweer[0].temp;
-            lowTemp.innerText = realData.wk_verw[3].min_temp + " °C";
-            maxTemp.innerText = realData.wk_verw[2].max_temp + " °C";
+            lowTemp.innerText = realData.wk_verw[0].min_temp + " °C";
+            maxTemp.innerText = realData.wk_verw[0].max_temp + " °C";
+            morgenLowtemp.innerText = realData.wk_verw[1].min_temp;
+            morgenMaxtemp.innerText = realData.wk_verw[1].max_temp;
+            overmorgenMax.innerText = realData.wk_verw[2].max_temp;
+            overmorgenLow.innerText = realData.wk_verw[2].min_temp;
+            natweeDagenmax.innerText = realData.wk_verw[3].max_temp;
+            natweeDagenmin.innerText = realData.wk_verw[3].min_temp;
+            nadrieDagenmax.innerText = realData.wk_verw[4].max_temp;
+            nadrieDagenmin.innerText = realData.wk_verw[4].min_temp;
         })
 
 };

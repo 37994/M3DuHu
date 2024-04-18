@@ -318,9 +318,6 @@ main {
     align-items: center;
 }
 
-.vandaag-Header{
-}
-
 .vandaag-Img{
     padding: 2rem;
     border-radius: 2rem;
@@ -332,7 +329,7 @@ main {
     text-align: center;
 }
 .temperatuur-wrapper > h2{
-    font-size: 200%;
+    font-size: 250%;
 }
 
 .weekoverzicht-wrapper{
