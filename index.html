@@ -81,14 +81,28 @@
                 <input type="checkbox" name="" id="js--doos3Checkbox" class="slider">
             </div>
         </section>
-        <section class="dozen doos4"></section>
+        <section class="dozen doos4">
+            <canvas id="binnenBuitenChart--js">
+
+            </canvas>
+        </section>
         <section class="dozen doos5">
             <p> buitentemperatuur  </p>
-
             <img id="imgZonnen" src="images/sun.png" alt="">
+
             <p id="js--graden"></p>
         </section>
-        <section class="dozen doos6"></section>
+        <section class="dozen doos6">
+            <div class="doos6-wrapper">
+                <img class="thermometerImg" src="/images/thermometerImg.webp" alt="">
+                <h2 class="temperatuur" id="tempText">
+                     <span class="celcius"> </span>
+                </h2>
+            </div>
+            <div class="btnWrapper">
+                <button class="temperatuurBtn" id="tempBtn">Meet nu</button>
+            </div>
+        </section>
         <section class="dozen doos7">
             <canvas id="js--zonnenChart" class="zonnenChart"></canvas>
         </section>
@@ -102,7 +116,70 @@
                 <p id="js--ondergang"></p>
             </div>
         </section>
-        <section class="dozen doos9"></section>
+        <section class="dozen doos9">
+            <div class="vandaag-wrapper">
+                <div>
+                    <h1 class="vandaag-Header" id="vandaag--js"></h1>
+                    <img src="images/☁️.png" class="vandaag-Img" alt="">
+                </div>
+            </div>
+            <div class="temperatuur-wrapper">
+                <h2 id="maxTemp--js"></h2>
+                <h2 id="lowTemp--js"></h2>
+            </div>         
+
+            <div class="weekoverzicht-wrapper">
+                <div class="overigeDagen">
+                    <h5 id="morgen--js"></h5>
+                    <img class="dagenImg" src="images/🌧️.png" alt="">
+                    <div class="Ovtemperatuur-wrapper">
+                        <h5 id="morgenDag--js"></h5>
+                        <h5 id="morgenNacht--js" class="nacht"></h5>
+                    </div>
+                </div>
+                <div class="overigeDagen">
+                    <h5 id="overmorgen--js"></h5>
+                    <img class="dagenImg" src="images/🌧️.png" alt="">
+                    <div class="Ovtemperatuur-wrapper">
+                        <h5 id="overmorgenDag--js"></h5>
+                        <h5 id="overmorgenNacht--js" class="nacht"></h5>
+                    </div>
+                </div>
+                <div class="overigeDagen">
+                    <h5>Zo</h5>
+                    <img class="dagenImg" src="images/☀️.png" alt="">
+                    <div class="Ovtemperatuur-wrapper">
+                        <h5 id="natweeDagenmax--js"></h5>
+                        <h5 id="natweeDagenmin--js" class="nacht"></h5>
+                    </div>
+                </div>
+                <div class="overigeDagen">
+                    <h5>Ma</h5>
+                    <img class="dagenImg" src="images/☁️.png" alt="">
+                    <div class="Ovtemperatuur-wrapper">
+                        <h5 id="nadrieDagenmax--js"></h5>
+                        <h5 id="nadrieDagenmin--js" class="nacht"></h5>
+                    </div>
+                </div>
+                <div class="overigeDagen">
+                    <h5>Di</h5>
+                    <img class="dagenImg" src="images/☁️.png" alt="">
+                    <div class="Ovtemperatuur-wrapper">
+                        <h5>15</h5>
+                        <h5 class="nacht">7</h5>
+                    </div>
+                </div>
+                <div class="overigeDagen">
+                    <h5 id="gisteren--js"></h5>
+                    <img class="dagenImg" src="images/☁️.png" alt="">
+                    <div class="Ovtemperatuur-wrapper">
+                        <h5>14</h5>
+                        <h5 class="nacht">9</h5>
+                    </div>
+                </div>
+            </div>
+
+        </section>
     </main>
     <footer>
     </footer>
