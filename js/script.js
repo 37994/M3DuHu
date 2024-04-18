@@ -1,5 +1,15 @@
 //tijd
+
+const nu = new Date();
+const dagen = ["Zondag", "Maandag", "Dinsdag", "Woensdag", "Donderdag", "Vrijdag", "Zaterdag"];
+const dagVdWeek = dagen[nu.getDay()];
+
 document.getElementById("js--tijd").innerText = new Date().toDateString();
+document.getElementById("vandaag--js").innerText = dagVdWeek;
+
+
+
+
 
 //chart
 
@@ -182,6 +192,8 @@ doos3Button6.onclick = function() {
 const zonOpkomst = document.getElementById("js--opkomst");
 const zonOndergang = document.getElementById("js--ondergang");
 const graden = document.getElementById("js--graden");
+const lowTemp = document.getElementById("lowTemp--js");
+const maxTemp = document.getElementById("maxTemp--js");
 
 function liveData(){
     fetch("https://weerlive.nl/api/weerlive_api_v2.php?key=demo&locatie=Amsterdam")
@@ -190,6 +202,8 @@ function liveData(){
             zonOpkomst.innerText = realData.liveweer[0].sup;
             zonOndergang.innerText = realData.liveweer[0].sunder;
             graden.innerText = realData.liveweer[0].temp;
+            lowTemp.innerText = realData.wk_verw[3].min_temp + " °C";
+            maxTemp.innerText = realData.wk_verw[2].max_temp + " °C";
         })
 
 };

@@ -66,7 +66,6 @@ main {
     box-shadow: 0 2rem 1rem 0 rgba(0, 0, 0, 0.2);
     padding: 1rem;
     border-radius: 2rem;
-    display: block;
     flex-grow: 1;
 }
 
@@ -232,10 +231,6 @@ main {
     width: 12rem;
 }
 
-.temperatuur{
-    display: absolute;
-}
-
 .btnWrapper{
     display: flex;
     justify-content: center;
@@ -246,7 +241,7 @@ main {
     padding: 1rem;
     border-radius: 1.6rem;
     min-width: 13rem;
-    background-color: #d4e09b;
+    background-color: rgb(212, 224, 155);
     font-size: 1.6rem;
     font-family: 'poppins', system-ui, sans-serif;
     color: #a98467;
@@ -269,8 +264,6 @@ main {
     grid-row: 10 / 20;
     grid-column: 7 / 12;
 }
-
-
 
 .doos8 {
     grid-row: 10 / 20;
@@ -309,28 +302,68 @@ main {
     width: 7rem;
 }
 
+/*Weerwidget*/
+
 .doos9 {
     grid-row: 8 / 20;
     grid-column: 14 / 20;
-    display:flex;
-    flex-direction: column;
-    padding: 3rem;
+    padding: 2rem;
 }
 
-.weerVandaag{
-    height:30rem;
-    background: red;
-}
-
-.weerOverzicht{
-    height:20rem;
-    background: blue;
+.vandaag-wrapper{
     display: flex;
+    justify-content: center;
+    height: 50%;
+    text-align: center;
+    align-items: center;
 }
 
-.overigeDagen{
-    width: 20rem;
+.vandaag-Header{
 }
+
+.vandaag-Img{
+    padding: 2rem;
+    border-radius: 2rem;
+}
+
+.temperatuur-wrapper{
+    display: flex;
+    justify-content: space-evenly;
+    text-align: center;
+}
+.temperatuur-wrapper > h2{
+    font-size: 200%;
+}
+
+.weekoverzicht-wrapper{
+    display: flex;
+    height: 30%;
+    justify-content: space-evenly;
+    text-align: center;
+    padding-top: 2rem;
+    flex-wrap: wrap;
+}
+.overigeDagen{
+    padding: 1rem;
+    background: white;
+    border: none;
+    border-radius: 1rem;
+}
+
+
+.dagenImg{
+    width: 6rem;
+    object-fit: contain;
+}
+
+.Ovtemperatuur-wrapper{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+}
+/**/
+
 
 footer{
     width: 100%;
