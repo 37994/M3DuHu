@@ -209,7 +209,7 @@ const natweeDagenmin = document.getElementById("natweeDagenmin--js");
 const natweeDagenmax = document.getElementById("natweeDagenmax--js");
 const nadrieDagenmin = document.getElementById("nadrieDagenmin--js");
 const nadrieDagenmax = document.getElementById("nadrieDagenmax--js");
-    
+
 
 function liveData(){
     fetch("https://weerlive.nl/api/weerlive_api_v2.php?key=demo&locatie=Amsterdam")
@@ -293,3 +293,19 @@ function myFunction() {
     }
   }
 
+
+const tempBtn = document.getElementById("tempBtn");
+const tempText = document.getElementById("tempText");
+let clicked = false;
+
+tempBtn.onclick = function(){
+    if(clicked === false){
+        let randomNumber = Math.floor((Math.random() * 3)+ 18);
+        if(randomNumber >= 15){
+           tempText.innerText = randomNumber + " °C";
+        }
+        else{
+            console.log(Error);
+        }
+    }
+}
