@@ -132,7 +132,7 @@ function liveData(){
             zonOndergang.innerText = realData.liveweer[0].sunder;
             graden.innerText = realData.liveweer[0].temp;
         })
-
+        
 };
 
 liveData();
